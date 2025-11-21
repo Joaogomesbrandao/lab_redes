@@ -159,8 +159,11 @@ Nesta primeira etapa, vocês irão explorar como uma sequência de bits pode ser
 
 📖  **Questões para reflexão** 
 - Quantos tons diferentes vocês conseguem distinguir?
+    R: Consigo distinguir dois tons, um mais grave (frequência mais baixa) e o outro, consequentemente, mais agudo (frequência maior).
 - É possível identificar qual tom representa 0 e qual representa 1?
+    R: Analisando o código apresentado e escutando o áudio, percebemos que o tom mais agudo é o que representa o bit 1, enquanto o mais grave representa o bit 0.
 - O que acontece quando há muitos bits iguais consecutivos?
+    R: Existe uma dificuldade em decodificar vários bits iguais consecutivamente.
 
 ### **Etapa 2**: Decodificação/Demodulação de Dados
 
@@ -174,14 +177,20 @@ Agora vocês irão trabalhar no processo inverso: como recuperar os dados origin
 
 🔎❓ **Perguntas para investigar** 
 - **Q2.1** : Que fatores podem afetar a qualidade da decodificação?
+    R: Acredito que depende diretamente da qualidade do sinal codificado, erros durante a transmissão do sinal ou perdas de dados a partir da compressão da informação em formatos como em MP3.
 - **Q2.2** : O que acontece se a taxa de transmissão for muito alta?
+    R: Isso pode melhorar a qualidade de áudio, uma vez que mais dados são usados para representar o sinal original. Por outro lado, é requerido um hardware melhor, que geralmente tende a custar mais, pois esse aumento na taxa geralmente é acompanhado pela crescente quantidade de erros na detecção dos bits.
 - **Q2.3** : Como o sistema decide se a frequências representa '0' ou '1'? (observe os codigos)
+    R: Se a frequência detectada for superior a 660Hz, então é o bit 1, caso contrário o bit é 0, está presente na função frequency_to_bit.
 
 🔓🔎 **Análise de modulação**
 - Busquem pelo o arquivo de audio com a sua mátricula no diretorio [dados_codificados](./dados_codificados/) e respondas as seguintes questões:
     - **A2.1** : Qual a modulação foi utilizada?
+        R: A modulação utilizada foi a de Frequency-Shift Keying (FSK).
     - **A2.2** : Qual o número de bits na menssagem
-    - **A2.3** : Qual a menssagem enviada? 
+        R: 41
+    - **A2.3** : Qual a menssagem enviada?
+        R: “10100101100101011010100110101001010110011”
 
 > Vocês tem até 3 dias apos o labotario ser explicado para verificar se a sua menssagem esta codificada corretamente!
 
@@ -197,13 +206,18 @@ Nesta etapa, vocês irão experimentar um dos maiores desafios em comunicações
 
 📖  **Questões para reflexão** 
 - Existem padrões de bits mais resistentes ao ruído que outros?
+    R: A própria modulação FSK por exemplo é um padrão resistente, uma vez que os receptores podem usar filtros de frequência para isolar o sinal desejado e rejeitar grande parte do ruído.
 - As taxas de bits por segundo modificam a resistencia a ruídos
+    R: Uma taxa de bits mais baixa permite utilizar sistemas de modulação mais simples, podendo ser redundante na transmissão do sinal e isso aumenta a resistência a ruídos. Por outro lado, uma taxa mais alta, pode não permitir redundância do sinal e isso pode ocasionar mais erros com ruídos.
 - Como isso se relaciona com situações reais (telefone com interferência, rádio com estática)?
+    R: Conseguimos perceber isso na ligação no momento em que a qualidade do áudio piora à medida que aumenta-se a distância ou interferência, misturando o ruído ao sinal de áudio ao mesmo tempo.
 
 🔎❓**Análise crítica**:
 - **A3.1** : Utilizando a sua menssagem da Etapa 2. A partir de que nível de ruído, para cada modulação, o sistema começa a falhar? 
     - a) Identifique o valor de SNR onde os primeiros bits são comprometidos
+        R: -32
     - b) Identifique o valor de SNR onde os primeiros todos os bits são comprometidos
+        R: -35
     - Utilize graficos para ilustrar os resultados onde o eixo x representa o valor de SNR e o y o número de erros
 
 > Responda o item A3.1 como um relátorio utilize os graficos para explicar os seus achados
@@ -221,8 +235,9 @@ O que vocês irão fazer:
 
 🔓 **Perguntas para investigar** 
 - **Q4.1** : Qual foi a menssagem enviada enviada no arquivo `dados_ar.wav`?
+    R: 10110
 - **Q4.2** : Quantas reproduções (vezes) foram necessarias para decodificar a menssagem completa?
-
+    R: 37 vezes.
 
 
 ## Orientações de Entrega
