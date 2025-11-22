@@ -237,7 +237,7 @@ O que vocês irão fazer:
 - **Q4.1** : Qual foi a menssagem enviada enviada no arquivo `dados_ar.wav`?
     R: 10110
 - **Q4.2** : Quantas reproduções (vezes) foram necessarias para decodificar a menssagem completa?
-    R: 37 vezes.
+    R: 17 vezes.
 
 
 ## Orientações de Entrega
